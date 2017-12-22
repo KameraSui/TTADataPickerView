@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TTADataPickerView"
-  s.version      = "0.2.0"
+  s.version      = "0.2.3"
   s.summary      = "A Swift mixed data selector"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/TMTBO/TTADataPickerView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/KameraSui/TTADataPickerView", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
