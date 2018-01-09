@@ -9,9 +9,8 @@
 import UIKit
 
 class TTADataPickerToolBar: UIToolbar {
-    let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: nil
-        , action: nil)
-    let confirmButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: nil)
+    let cancelButton = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: nil, action: nil);
+    let confirmButton = UIBarButtonItem.init(title: "确定", style: UIBarButtonItemStyle.plain, target: nil, action: nil);
     let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil
         , action: nil)
     let titleButton = TTADataPickerTitleBarButtonItem(title: nil)
