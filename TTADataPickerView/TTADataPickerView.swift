@@ -247,13 +247,6 @@ extension TTADataPickerView {
     // MARK: - Public Functions
     // MARK: - Global apperance properties functions
  
-     public dynamic func setConfirmButtonTitle(title:String) {
-        toolBar.confirmButton.title = title;
-    }
-    
-    public dynamic func setCancelButtonTitle(title:String) {
-        toolBar.cancelButton.title = title;
-    }
  
     public dynamic func setConfirmButtonAttributes(att: [String: Any]?) {
         toolBar.confirmButton.setTitleTextAttributes(att, for: .normal)
