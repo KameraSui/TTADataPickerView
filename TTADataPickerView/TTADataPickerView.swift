@@ -355,7 +355,7 @@ fileprivate extension TTADataPickerView {
             for component in 0..<componentCount {
                 guard let row = pickerView?.selectedRow(inComponent: component), let title = textItemsForComponent?[component][row] else { continue }
                 textItems.append(title)
-                textIndexItems.append(component)
+                textIndexItems.append(row)
             }
             delegate?.dataPickerView(self, didSelectTitles: textItems)
             delegate?.dataPickerView(self, didSelect: textIndexItems)
