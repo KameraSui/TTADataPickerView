@@ -41,6 +41,8 @@ public protocol TTADataPickerViewDelegate: NSObjectProtocol {
     ///   - pickerView: PickerView
     ///   - titles: Selected titles
     func dataPickerView(_ pickerView: TTADataPickerView, didSelectTitles titles: [String])
+    /// add back???
+    func dataPickerView(_ pickerView: TTADataPickerView, didSelect: [Int])
     
     /// When the type of dataPickerView is *NOT* `.text`, you should use this function to handle the selection
     ///
@@ -72,7 +74,12 @@ public protocol TTADataPickerViewDelegate: NSObjectProtocol {
 
 public extension TTADataPickerViewDelegate {
     
+    
     func dataPickerView(_ pickerView: TTADataPickerView, didSelectTitles titles: [String]) {
+        
+    }
+    
+    func dataPickerView(_ pickerView: TTADataPickerView, didSelect: [Int]){
         
     }
     
@@ -344,11 +351,14 @@ fileprivate extension TTADataPickerView {
         case .text:
             guard let componentCount = pickerView?.numberOfComponents else { return }
             var textItems = [String]()
+            var textIndexItems = [Int]()
             for component in 0..<componentCount {
                 guard let row = pickerView?.selectedRow(inComponent: component), let title = textItemsForComponent?[component][row] else { continue }
                 textItems.append(title)
+                textIndexItems.append(component)
             }
             delegate?.dataPickerView(self, didSelectTitles: textItems)
+            delegate?.dataPickerView(self, didSelect: textIndexItems)
         case .date, .dateTime, .time:
             guard let date = datePicker?.date else { return }
             delegate?.dataPickerView(self, didSelectDate: date)
